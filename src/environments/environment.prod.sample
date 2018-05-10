@@ -1,0 +1,12 @@
+import { IConfiguration } from './IConfiguration';
+
+export const environment: IConfiguration = {
+  production: true,
+  authOptions: {
+    audience: '[audience]',
+    clientID: '[clientID]',
+    domain: '[domain]',
+    redirectUri: '[redirectUri]',
+    scope: '[scope]'
+  }
+};

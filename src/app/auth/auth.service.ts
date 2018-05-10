@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { IAuthService } from './IAuthService';
 import { WebAuth } from 'auth0-js';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService implements IAuthService {
-  auth0: WebAuth;
+  private auth0: WebAuth;
   constructor() {
     this.auth0 = new WebAuth({
-      domain: '',
-      clientID: '',
-      responseType: 'token'
+      domain: environment.authOptions.domain,
+      clientID: environment.authOptions.clientID,
+      responseType: environment.authOptions.responseType,
     });
   }
   get authenticated(): boolean {
